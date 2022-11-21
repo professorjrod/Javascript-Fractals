@@ -8,9 +8,9 @@ function setup() {
   let minVal = -2.5;
   let maxVal = 2.5;
 
-  //I've found -2.5 and 2.5 to be the best initial values for the mandelbrot set
-  minSlider = createSlider(-2.5, 0, minVal, 0.01);
-  maxSlider = createSlider(0, 2.5, maxVal, 0.01);
+  //I've found -2.45 and 2.45 to be the best initial values for the mandelbrot set
+  minSlider = createSlider(-2.45, 0, minVal, 0.01);
+  maxSlider = createSlider(0, 2.45, maxVal, 0.01);
 }
 function draw() {
   let maxIterations = 100;
