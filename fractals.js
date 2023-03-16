@@ -11,7 +11,24 @@ function setup() {
   //I've found -2.45 and 2.45 to be the best initial values for the mandelbrot set
   minSlider = createSlider(-2.45, 0, minVal, 0.01);
   maxSlider = createSlider(0, 2.45, maxVal, 0.01);
+
+  // Create labels for sliders
+  let minLabel = createDiv('Minimum Value: ' + minSlider.value());
+  let maxLabel = createDiv('Maximum Value: ' + maxSlider.value());
+
+  // Set label positions relative to sliders
+  minLabel.position(minSlider.x, minSlider.y - 20);
+  maxLabel.position(maxSlider.x, maxSlider.y - 40);
+
+  // Update labels when slider values change
+  minSlider.input(function() {
+    minLabel.html('Minimum Value: ' + minSlider.value());
+  });
+  maxSlider.input(function() {
+    maxLabel.html('Maximum Value: ' + maxSlider.value());
+  });
 }
+
 function draw() {
   let maxIterations = 100;
   loadPixels();
